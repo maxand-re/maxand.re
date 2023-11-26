@@ -1,7 +1,7 @@
 "use client";
 
 import {useEffect, useRef, useState} from "react";
-import AppButton from "@/components/ui/AppButton/AppButton";
+import AppLinkButton from "@/components/ui/AppButton/AppLinkButton";
 import cellSvg from '@/assets/images/cell.svg'
 import anime from "animejs"
 import {FaDiscord, FaEnvelope, FaLinkedin, FaMailchimp} from "react-icons/fa6";
@@ -49,7 +49,7 @@ export default function Home() {
                 endDelay: -700
             })
             .add({
-                targets: '.button-container button',
+                targets: '.button-container a',
                 translateY: ["-1.5em", 0],
                 opacity: [0, 1],
                 duration: 800,
@@ -115,9 +115,8 @@ export default function Home() {
                     <span className="font-bold">Software Engineering</span> Student.
                 </h2>
                 <div className="flex gap-3 mt-3 button-container">
-                    <AppButton className="opacity-0" icon={<FaDiscord/>}>Discord</AppButton>
-                    <AppButton className="opacity-0" icon={<FaLinkedin/>}>LinkedIn</AppButton>
-                    <AppButton className="opacity-0" icon={<FaEnvelope/>}>Mail</AppButton>
+                    <AppLinkButton className="opacity-0" target={"_blank"} href={"https://www.linkedin.com/in/maxandre-rochefort/"} icon={<FaLinkedin/>}>LinkedIn</AppLinkButton>
+                    <AppLinkButton className="opacity-0" href={"mailto:contact@maxand.re"} icon={<FaEnvelope/>}>Mail</AppLinkButton>
                 </div>
             </div>
         </header>
